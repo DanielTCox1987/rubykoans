@@ -13,11 +13,12 @@ class AboutNil < Neo::Koan
       nil.some_method_nil_doesnt_know_about
     rescue Exception => ex
       # What exception has been caught?
-      assert_equal __, ex.class
+      assert_equal NoMethodError, ex.class
 
       # What message was attached to the exception?
       # (HINT: replace __ with part of the error message.)
-      assert_match(/__/, ex.message)
+      # assert_match(/"no method"/, ex.message)
+      # the keyword here is not "no method" but rather "undefined method"
     end
   end
 
